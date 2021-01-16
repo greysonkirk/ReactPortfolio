@@ -5,8 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+  background: linear-gradient(180deg, rgb(134, 134, 134) , rgb(25, 25, 26))no-repeat center center fixed;
 
+  
+}
+ 
+ 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
