@@ -1,25 +1,16 @@
-import React, { useEffect, useState } from "react";
-// import { Link, useParams } from "react-router-dom";
+import React from "react";
 import { Col, Row, Container } from "../Components/Grid";
 import { repos } from "../utils/repos";
 import Me from "../me.jpg";
-import Carousel from "react-bootstrap/Carousel";
-
-// import API from "../utils/API";
+import Project from "../Components/Project";
+import { Button } from "react-bootstrap";
 
 function Home(props) {
-  const [gitRepo, setgitRepo] = useState([]);
-  useEffect(() => {
-    setgitRepo(repos);
-  }, []);
-
-  console.log(gitRepo);
-
   return (
     <Container fluid>
       <Row>
         <Col size="md-12">
-          <h1 className="text-light">
+          <h1 className="text-light" style={{ fontFamily: "Abel" }}>
             {" "}
             I'm Greyson.
             <p>
@@ -36,34 +27,47 @@ function Home(props) {
       </Row>
       <Container>
         <Row>
-          <Col size="12">
-            <Carousel>
-              {repos.map((repo) => {
-                return (
-                  <Carousel.Item interval={2000}>
-                    <img
-                      key={repo.id}
-                      className="d-block w-100"
-                      src={repo.img}
-                      alt={repo.name}
-                    />
-                    <Carousel.Caption>
-                      <div
-                        className="text-light"
-                        style={{
-                          marginBottom: "50px",
-                          backgroundColor: "rgba(52, 52, 52, 0.8)",
-                        }}
-                      >
-                        {" "}
-                        <h3>{repo.name} </h3> <p>{repo.desc}</p>
-                      </div>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                );
-              })}
-            </Carousel>
+          <Col size="4">
+            <a
+              id="icon"
+              href="https://github.com/greysonkirk?tab=repositories"
+              target="_blank"
+            >
+              <Button variant="light">
+                <i class=" fab fa-github"></i> GitHub
+              </Button>
+            </a>
           </Col>
+          <Col size="4">
+            <a
+              id="icon"
+              href="https://www.linkedin.com/in/greysonkirk/"
+              target="_blank"
+            >
+              <Button variant="light">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </Button>
+            </a>
+          </Col>
+          <Col size="4">
+            <a id="icon" href="mailto: GreysonKirk@yahoo.com">
+              <Button variant="light">
+                {" "}
+                <i class="far fa-envelope"> GreysonKirk@Yahoo.com</i>
+              </Button>
+            </a>
+          </Col>
+        </Row>
+      </Container>
+      <Container>
+        <Row>
+          {repos.map((repo) => {
+            return (
+              <Col size="4">
+                <Project {...repo}></Project>
+              </Col>
+            );
+          })}
         </Row>
       </Container>
     </Container>

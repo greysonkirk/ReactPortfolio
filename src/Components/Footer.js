@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
+import Navbar from 'react-bootstrap/Navbar'
+export default function Footer() {
+  return (
+  <div className="mt-5">
+      <Navbar expand="lg" variant="dark" bg="dark" fixed="bottom">
 
-export default function nav() {
-    return (
-        <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
         <a className="navbar-brand" href="/">Greyson Kirk</a>
         <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -19,6 +21,8 @@ export default function nav() {
 
             </div>
         </div>
-    </nav>
-    )
+
+        </Navbar>
+        </div>
+  );
 }
