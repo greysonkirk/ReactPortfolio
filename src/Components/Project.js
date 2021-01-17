@@ -12,7 +12,8 @@ function Project(props) {
         <Card.Text>
         {props.desc}
         </Card.Text>
-        <a href={props.link}> <Button variant="primary">Go To Repo</Button></a>
+        <a href={props.link}> <Button variant="primary">Repo</Button></a>
+        <a href={props.deployed}> <Button variant="secondary">Deployed App</Button></a>
       </Card.Body>
     </Card>
     </CardColumns>
