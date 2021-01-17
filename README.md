@@ -2,7 +2,7 @@
 
 
  ### GitHub Repo: https://github.com/greysonkirk/ReactPortfolio
- ### Heroku Link:  https://nameless-wave-33506.herokuapp.com/
+ ### Heroku Link:  https://dry-escarpment-57605.herokuapp.com/
 
 This portfolio is built using React and React Bootstrap. 
 
