@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 // import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../Components/Grid";
-import {repos} from "../utils/repos";
+import { repos } from "../utils/repos";
 import Me from "../me.jpg";
-import Carousel from 'react-bootstrap/Carousel'
- 
+import Carousel from "react-bootstrap/Carousel";
 
 // import API from "../utils/API";
 
 function Home(props) {
   const [gitRepo, setgitRepo] = useState([]);
-useEffect(() => {
-  setgitRepo(repos)
-}, [])
-
+  useEffect(() => {
+    setgitRepo(repos);
+  }, []);
 
   console.log(gitRepo);
 
@@ -38,25 +36,31 @@ useEffect(() => {
       </Row>
       <Container>
         <Row>
-          <Col size="6">
+          <Col size="12">
             <Carousel>
               {repos.map((repo) => {
-                return(
-              <Carousel.Item interval={1000}>
-                <img
-                key={repo.id}
-                  className="d-block w-100"
-                  src={repo.img}
-                  alt= {repo.name}
-                />
-                <Carousel.Caption>
-                  <h3>{repo.name}</h3>
-                  <p>
-                    {repo.desc}
-                  </p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              )
+                return (
+                  <Carousel.Item interval={2000}>
+                    <img
+                      key={repo.id}
+                      className="d-block w-100"
+                      src={repo.img}
+                      alt={repo.name}
+                    />
+                    <Carousel.Caption>
+                      <div
+                        className="text-light"
+                        style={{
+                          marginBottom: "50px",
+                          backgroundColor: "rgba(52, 52, 52, 0.8)",
+                        }}
+                      >
+                        {" "}
+                        <h3>{repo.name} </h3> <p>{repo.desc}</p>
+                      </div>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                );
               })}
             </Carousel>
           </Col>
